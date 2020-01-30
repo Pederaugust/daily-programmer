@@ -11,8 +11,7 @@
   (->> (char-array data)
        seq
        (map #(Character/toLowerCase %) ,,,)
-       (into #{} ,,,)
-       (filter #(Character/isLowerCase %) ,,,)
+       (into (set) ,,,)
        (map (fn [element]
               (vector element 0)) ,,,)
        (into {} ,,,)))
