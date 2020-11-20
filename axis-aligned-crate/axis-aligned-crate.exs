@@ -3,9 +3,11 @@ defmodule Fitter do
     div(crateX, boxx) * div(crateY, boxy)
   end
 
-  def fit2(crateX, crateY, boxx, boxy) do
-    max(fit1(crateX, crateY, boxx, boxy),
-      div(crateX, boxy) * div(crateY, boxx))
+  def fit2(cX, cY, bx, by) do
+      max(
+        fit1(cX, cY, bx, by),
+        fit1(cX, cY, by, bx)
+      )
   end
 end
 
